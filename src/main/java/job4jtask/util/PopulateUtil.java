@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PopulateUtil {
-    private static final Logger LOGGER =  Logger.getLogger(PopulateUtil.class);
+    private static final Logger LOGGER = Logger.getLogger(PopulateUtil.class);
 
     public static List<String> populateSubdivListExample() {
         List<String> list = new ArrayList<>();
@@ -54,7 +54,7 @@ public class PopulateUtil {
     public List<DigitArr> populateDigitArrListExample() {
         List<DigitArr> digitArrs = new ArrayList<>();
 
-        DigitArr digitArr=new DigitArr();
+        DigitArr digitArr = new DigitArr();
         List<Integer> digits = new ArrayList<>();
         digits.add(1);
         digits.add(1);
@@ -64,7 +64,7 @@ public class PopulateUtil {
         digitArr.setThird(0);
         digitArrs.add(digitArr);
 
-        DigitArr digitArr1=new DigitArr();
+        DigitArr digitArr1 = new DigitArr();
         List<Integer> digits1 = new ArrayList<>();
         digits1.add(1);
         digits1.add(2);
@@ -74,7 +74,7 @@ public class PopulateUtil {
         digitArr1.setThird(0);
         digitArrs.add(digitArr1);
 
-        DigitArr digitArr__=new DigitArr();
+        DigitArr digitArr__ = new DigitArr();
         List<Integer> digits__ = new ArrayList<>();
         digits__.add(1);
         digits__.add(1);
@@ -85,7 +85,7 @@ public class PopulateUtil {
         digitArr__.setThird(1);
         digitArrs.add(digitArr__);
 
-        DigitArr digitArr_=new DigitArr();
+        DigitArr digitArr_ = new DigitArr();
         List<Integer> digits_ = new ArrayList<>();
         digits_.add(1);
         digits_.add(1);
@@ -97,7 +97,7 @@ public class PopulateUtil {
         digitArrs.add(digitArr_);
 
 
-        DigitArr digitArr2=new DigitArr();
+        DigitArr digitArr2 = new DigitArr();
         List<Integer> digits2 = new ArrayList<>();
         digits2.add(2);
         digitArr2.setDigits(digits2);
@@ -106,7 +106,7 @@ public class PopulateUtil {
         digitArr2.setThird(0);
         digitArrs.add(digitArr2);
 
-        DigitArr digitArr3=new DigitArr();
+        DigitArr digitArr3 = new DigitArr();
         List<Integer> digits3 = new ArrayList<>();
         digits3.add(2);
         digits3.add(1);
@@ -117,7 +117,7 @@ public class PopulateUtil {
         digitArr3.setThird(1);
         digitArrs.add(digitArr3);
 
-        DigitArr digitArr4=new DigitArr();
+        DigitArr digitArr4 = new DigitArr();
         List<Integer> digits4 = new ArrayList<>();
         digits4.add(2);
         digits4.add(1);

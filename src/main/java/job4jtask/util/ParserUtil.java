@@ -14,14 +14,14 @@ public class ParserUtil {
         List<Integer> digits = new ArrayList<>();
         Matcher matcher = VALID_PATTERN.matcher(toParse);
         while (matcher.find()) {
-            digits.add( Integer.valueOf(matcher.group()));
+            digits.add(Integer.valueOf(matcher.group()));
         }
         return digits;
     }
 
     public static List<DigitArr> parseStrList(List<String> strList) {
         List<DigitArr> digitArrs = new ArrayList<>();
-        for (String str: strList) {
+        for (String str : strList) {
             DigitArr digitArr = new DigitArr();
             List<Integer> digits = parseStr(str);
             switch (digits.size()) {
@@ -49,7 +49,7 @@ public class ParserUtil {
 
     public static List<String> getStrSortedArray(List<DigitArr> digitArrs) {
         List<String> strs = new ArrayList<>();
-        for (DigitArr digitArr: digitArrs) {
+        for (DigitArr digitArr : digitArrs) {
             List<Integer> digits = digitArr.getDigits();
             StringBuilder builder = new StringBuilder();
             switch (digits.size()) {
@@ -66,7 +66,7 @@ public class ParserUtil {
                     builder.append("\\SSK").append(digits.get(2));
                     break;
             }
-            String completedStr=builder.toString();
+            String completedStr = builder.toString();
             strs.add(completedStr);
         }
         return strs;
