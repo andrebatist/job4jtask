@@ -15,8 +15,13 @@ public class SortUtil {
     }
 
     public List<DigitArr> sort(List<DigitArr> arrs, boolean isAsc) {
-        Collections.sort(arrs, new DigitArrComparatorFirst());
-        if (!isAsc) Collections.reverse(arrs);
+        if (isAsc) {
+            Collections.sort(arrs, new DigitArrComparatorFirst());
+        }
+        else {
+            Collections.sort(arrs,Collections.reverseOrder(new DigitArrComparatorFirst()));
+            changeZeros(arrs);
+        }
         List<DigitArr> secondList = new ArrayList<>();
         int num = 0;
         for (DigitArr digitArr : arrs) {
@@ -28,8 +33,12 @@ public class SortUtil {
                         tmp.add(digitArrTmp);
                     }
                 }
-                Collections.sort(tmp, new DigitArrComparatorSecond());
-                if (!isAsc) Collections.reverse(tmp);
+                if (isAsc) {
+                    Collections.sort(tmp, new DigitArrComparatorSecond());
+                }
+                else {
+                    Collections.sort(tmp,Collections.reverseOrder(new DigitArrComparatorSecond()));
+                }
                 secondList.addAll(tmp);
             }
         }
@@ -49,11 +58,16 @@ public class SortUtil {
                         tmp.add(digitArrTmp);
                     }
                 }
-                Collections.sort(tmp, new DigitArrComparatorThird());
-                if (!isAsc) Collections.reverse(tmp);
+                if (isAsc) {
+                    Collections.sort(tmp, new DigitArrComparatorThird());
+                } else {
+                    Collections.sort(tmp, Collections.reverseOrder(new DigitArrComparatorThird()));
+                }
+               // if (!isAsc) Collections.reverse(tmp);
                 thirdList.addAll(tmp);
             }
         }
+        if (!isAsc) setZeros(thirdList);
         thirdList = insertDigitsFirst(thirdList);
         thirdList = insertDigitsSecond(thirdList);
         return thirdList;
@@ -125,5 +139,19 @@ public class SortUtil {
             isElPresent = false;
         }
         return updatedList;
+    }
+
+    private void changeZeros(List<DigitArr> list) {
+        for (DigitArr digitArr: list) {
+            if (digitArr.getSecond()==0) digitArr.setSecond(99);
+            if (digitArr.getThird()==0) digitArr.setThird(99);
+        }
+    }
+
+    private void setZeros(List<DigitArr> list) {
+        for (DigitArr digitArr: list) {
+            if (digitArr.getSecond()==99) digitArr.setSecond(0);
+            if (digitArr.getThird()==99) digitArr.setThird(0);
+        }
     }
 }
